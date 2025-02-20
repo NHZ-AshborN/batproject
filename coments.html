@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Comentarios</title>
+        <link rel="stylesheet" href="./styles-4.css">
+    </head>
+    <body>
+        <header>
+            <img id="logo" src="./OIP-removebg-preview.png">
+            <nav>
+                <ul>
+                    <a href="./index.html">
+                        <li>Home</li>
+                    </a>
+
+                    <a href="./contact.html">
+                        <li>Contato</li>
+                    </a>
+
+                    <a href="./fotos.html">
+                        <li>Fotos</li>
+                    </a>
+
+                    <a href="./coments.html">
+                        <li>Comentarios</li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+        <div class="comment-section">
+            <h2>Deixe seu Comentário</h2>
+            <form id="commentForm">
+                <textarea id="commentInput" placeholder="Escreva seu comentário aqui..." required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="commentList"></div>
+        </div>
+        <script>
+            document.getElementById('commentForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const comment = document.getElementById('commentInput').value;
+                if(comment) {
+                    const commentElement = document.createElement('div');
+                    commentElement.className = 'comment';
+                    commentElement.textContent = comment;
+                    document.getElementById('commentList').appendChild(commentElement);
+                    document.getElementById('commentInput').value = '';
+                }
+            });
+        </script>
+        <footer>
+            <img style="object-fit: contain;" id="logo" src="./OIP-removebg-preview.png" />
+            <span>Todos os direitos reservados ©</span>
+            <span>Desenvolvido por: Francisco Almeida</span>
+
+            <nav class="footer-navigation">
+                <ul class="footer-list">
+                    <a href="./index.html">
+                        <li>Home</li>
+                    </a>
+
+                    <a href="./contact.html">
+                        <li>Contato</li>
+                    </a>
+
+                    <a href="./fotos.html">
+                        <li>Fotos</li>
+                    </a>
+
+                    <a href="./coments.html">
+                        <li>Comentarios</li>
+                    </a>
+                </ul>
+            </nav>
+        </footer>
+    </body>
+</html>
